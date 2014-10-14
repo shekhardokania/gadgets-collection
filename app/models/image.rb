@@ -1,3 +1,4 @@
 class Image < ActiveRecord::Base
-  belongs_to :imageable, polymorphic: true
+  belongs_to :gadget
+  mount_uploader :image, ImageUploader
 end
