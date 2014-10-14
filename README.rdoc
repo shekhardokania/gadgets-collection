@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build a RoR application to manage your electronic gadgets collection.
 
-Things you may want to cover:
+It should be possible to create a user account, to sign in and out and as a
+user to see a visual representation of the collection (cover flow and list
+mode) and search your own gadgets.
 
-* Ruby version
+For each gadget the user can upload various images which can be displayed
+in different sizes,
 
-* System dependencies
+For testing I strongly recommend using rspec and either cucumber or rspec
+request specs.
 
-* Configuration
+Bonus: Use TDD (should be visible in the git log)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The implementation should be DRY, restful and well-tested - please keep the
+code minimal and avoid from using scaffolds.
