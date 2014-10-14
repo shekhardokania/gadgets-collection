@@ -20,7 +20,8 @@ gem 'twitter-bootstrap-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'devise'
-gem 'paperclip'
+gem 'carrierwave'
+gem 'rmagick', require: false
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

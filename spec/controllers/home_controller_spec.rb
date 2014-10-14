@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe HomeController, :type => :controller do
   describe 'default route' do
-    it ' defaulls to home#index' do
+    it ' defaults to home#index' do
       expect(get: '/').to route_to(controller: 'home', action: 'index')
     end
   end

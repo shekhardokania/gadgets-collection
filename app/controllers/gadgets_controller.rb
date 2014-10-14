@@ -1,5 +1,5 @@
 class GadgetsController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @gadgets = current_user.gadgets
     @gadgets = @gadgets.search(params[:search]) if params[:search]
@@ -13,7 +13,7 @@ class GadgetsController < ApplicationController
     @gadget = Gadget.new(user_id: current_user.id)
     if @gadget.update_attributes(gadget_params)
       upload_images
-      flash[:success] = 'Sucessufully created'
+      flash[:success] = 'Saved'
       redirect_to gadgets_path
     else
       flash.now.alert = "Failed"
