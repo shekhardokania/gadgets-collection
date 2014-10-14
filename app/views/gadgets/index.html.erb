@@ -1,0 +1,48 @@
+<h1>Gadgets</h1>
+
+<div class="alert">
+  <%= form_tag gadgets_path, method: :get do %>
+      <%= text_field_tag :search, params[:search], placeholder: 'search by name or description' %>
+      <br>
+      <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
+      <%= link_to 'Reset search', gadgets_path %>
+  <% end %>
+</div>
+
+<p>
+  <%= link_to 'Add new', new_gadget_path, class: 'btn' %>
+</p>
+
+<table class="table table-striped">
+  <tr>
+    <th width="200px">Image</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+  <% @gadgets.each do |gadget| %>
+      <tr>
+        <td>
+          <% gadget.images.each do |image| %>
+              <%= image_tag image.image_url(:thumb).to_s %>
+          <% end %>
+        </td>
+        <td><%= gadget.name %></td>
+        <td><%= gadget.description %></td>
+        <td>
+          <%= link_to 'Edit', edit_gadget_path(gadget) %>
+          <%= link_to 'Delete', gadget_path(gadget), method: :delete %>
+        </td>
+      </tr>
+  <% end %>
+  <% unless @gadgets.present? %>
+      <tr>
+        <td>
+          No results.
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path, class: 'btn btn-warning' %>
+<%= link_to 'Sign out', sign_out_path, method: :delete, class: 'btn btn-danger' %>
